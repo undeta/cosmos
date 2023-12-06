@@ -1,5 +1,5 @@
 # Cosmos
-Beautiful Nuxt components theme.
+Beautiful Nuxt components layer.
 
 ## Usage
 Add the theme in your nuxt configuration file and you are ready to lift off.
