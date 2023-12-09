@@ -2,5 +2,4 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   extends: ['../'],
-  modules: ['@unocss/nuxt'],
 })
