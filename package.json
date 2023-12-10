@@ -12,6 +12,11 @@
     "vue",
     "nuxt"
   ],
+  "scripts": {
+    "dev": "nuxt dev",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
   "dependencies": {
     "@unocss/nuxt": "^0.58.0"
   },

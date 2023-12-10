@@ -1,8 +1,7 @@
 <script setup lang="ts">
 type Size = 'default' | 'small' | 'large'
 type Type = 'default' | 'primary' | 'ghost' | 'text'
-type Shape = 'default' | 'square'
-type Roundness = 'default' | 'circle'
+
 type Props = {
   type?: Type
   size?: Size
@@ -10,8 +9,8 @@ type Props = {
   noScale?: boolean
   noSaturate?: boolean
   danger?: boolean
-  shape?: Shape
-  roundness?: Roundness
+  square?: boolean
+  rounded?: boolean
 }
 
 const TYPES: Record<Type, string[]> = {
@@ -29,13 +28,19 @@ const DANGER_TYPES: Record<Type, string[]> = {
 }
 
 const SIZES: Record<Size, string[]> = {
-  default: ['h-12 rounded-xl'],
-  small: ['h-8 rounded-lg'],
-  large: ['h-16 rounded-xl text-xl'],
+  default: ['h-12'],
+  small: ['h-8'],
+  large: ['h-16 text-xl'],
 }
-const SHAPES: Record<Shape, Record<Size, string[]>> = {
+
+const SHAPES: Record<'default' | 'square', Record<Size, string[]>> = {
   default: { default: ['px-4'], small: ['px-2'], large: ['px-6'] },
-  sqaure: { default: ['w-12'], small: ['w-8'], large: ['w-16'] },
+  square: { default: ['w-12'], small: ['w-8'], large: ['w-16'] },
+}
+
+const ROUNDNESS: Record<'default' | 'rounded', Record<Size, string[]>> = {
+  default: { default: ['rounded-xl'], small: ['rounded-lg'], large: ['rounded-xl'] },
+  rounded: { default: ['rounded-full'], small: ['rounded-full'], large: ['rounded-full'] },
 }
 
 const props = defineProps<Props>()
@@ -45,11 +50,12 @@ const props = defineProps<Props>()
   <button
     :class="[
       'transition-all duratio-200 border-4',
-      props.noScale ? '' : 'active:(scale-95)',
-      props.noSaturate ? '' : 'hover:(saturate-130)',
-      ...(props.danger ? DANGER_TYPES : TYPES)[props.type || 'default'],
-      ...SIZES[props.size || 'default'],
-      ...SHAPES[props.shape || 'default'][props.size || 'default'],
+      noScale ? '' : 'active:(scale-95)',
+      noSaturate ? '' : 'hover:(saturate-130)',
+      ...(danger ? DANGER_TYPES : TYPES)[type || 'default'],
+      ...SIZES[size || 'default'],
+      ...SHAPES[square ? 'square' : 'default'][size || 'default'],
+      ...ROUNDNESS[rounded ? 'rounded' : 'default'][size || 'default'],
     ]"
     type="button"
   >
