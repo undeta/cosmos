@@ -1,6 +1,6 @@
 # Cosmos
 
-Beautiful Nuxt components layer.
+the dream Nuxt component library for doers.
 
 ## Usage
 

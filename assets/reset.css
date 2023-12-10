@@ -84,6 +84,33 @@ h6 {
   font-weight: inherit;
 }
 
+h1,
+h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+h3,
+h4 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+h5,
+h6 {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+h1,
+h3,
+h5 {
+  font-weight: 600;
+}
+
+p {
+  padding-top: 0.5rem;
+}
 /*
 Reset links to optimize for opt-in styling instead of opt-out.
 */

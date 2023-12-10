@@ -2,7 +2,7 @@
   "name": "@undeta/cosmos",
   "version": "0.0.1",
   "type": "module",
-  "description": "The Dream Nuxt Component Library For Doers.",
+  "description": "the dream Nuxt component library for doers.",
   "license": "GPL-3.0",
   "author": "undeta",
   "main": "nuxt.config.ts",
@@ -18,7 +18,8 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@unocss/nuxt": "^0.58.0"
+    "@unocss/nuxt": "^0.58.0",
+    "ohash": "^1.1.3"
   },
   "devDependencies": {
     "nuxt": "^3.8.2",

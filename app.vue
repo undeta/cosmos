@@ -47,6 +47,29 @@
       </c-button>
     </div>
 
-    <div></div>
+    <div>
+      <c-sheet>
+        <h5>Pushing Changes</h5>
+
+        <p>After you have created a project, you can push your local code to a live Space environment with a single command:</p>
+
+        <c-code>space push</c-code>
+
+        <p>This will package and upload all the necessary files to create a new “revision”: a complete package of your app at a single point in time.</p>
+
+        <p>Each push also creates a "Builder instance”: a full copy of your app, running in your Space, to test, debug and play around with.</p>
+      </c-sheet>
+
+      <c-sheet
+        href="#"
+        class="min-w-xs"
+      >
+        <h5>@undeta/cosmos</h5>
+
+        <p>unreleased</p>
+
+        <p>~ no revisions yet</p>
+      </c-sheet>
+    </div>
   </main>
 </template>

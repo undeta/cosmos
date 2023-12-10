@@ -11,6 +11,7 @@ type Props = {
   danger?: boolean
   square?: boolean
   rounded?: boolean
+  htmlType?: 'button' | 'submit' | 'reset'
 }
 
 const TYPES: Record<Type, string[]> = {
@@ -49,7 +50,7 @@ const props = defineProps<Props>()
 <template>
   <button
     :class="[
-      'transition-all duratio-200 border-4',
+      'transition-all duratio-200 border-4 select-none',
       noScale ? '' : 'active:(scale-95)',
       noSaturate ? '' : 'hover:(saturate-130)',
       ...(danger ? DANGER_TYPES : TYPES)[type || 'default'],
@@ -57,8 +58,10 @@ const props = defineProps<Props>()
       ...SHAPES[square ? 'square' : 'default'][size || 'default'],
       ...ROUNDNESS[rounded ? 'rounded' : 'default'][size || 'default'],
     ]"
-    type="button"
+    :type="htmlType || 'button'"
   >
-    <slot />
+    <div :class="['flex items-center pointer-events-none h-full w-full', square ? 'justify-center' : '']">
+      <slot />
+    </div>
   </button>
 </template>
